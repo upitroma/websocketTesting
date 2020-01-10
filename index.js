@@ -4,7 +4,7 @@ var socket = require("socket.io")
 //app setup
 var app = express();
 var server = app.listen(4000,function(){
-    console.log("Server is up on "+getIp()+". listening to requests from 4000")
+    console.log("Server is up on http://"+getIp()+":4000")
 });
 
 //static files
@@ -41,6 +41,7 @@ io.on("connection",function(socket){
     socket.on('disconnect', function(){
         console.info('user disconnected from socket: ' + socket.id + '.');
         isActiveLookup[socket.id]=false
+        io.sockets.emit("serverPublic","user disconnected on socket: "+socket.id+". Current active sockets: "+getTotalActiveSockets())
     });
 });
 
