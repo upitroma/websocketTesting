@@ -1,5 +1,5 @@
 //Make connection
-var socket = io.connect("http://192.168.1.21:4000");//change to server's location
+var socket = io.connect("http://10.228.209.25:4000");//change to server's location
 
 //query dom
 

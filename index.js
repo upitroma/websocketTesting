@@ -39,7 +39,7 @@ io.on("connection",function(socket){
     });
 
     socket.on('disconnect', function(){
-        console.info('user disconnected from socket: ' + socket.id + '.');
+        console.info('user disconnected from socket: ' + socket.id);
         isActiveLookup[socket.id]=false
         io.sockets.emit("serverPublic","user disconnected on socket: "+socket.id+". Current active sockets: "+getTotalActiveSockets())
     });
