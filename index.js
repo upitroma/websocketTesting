@@ -26,7 +26,7 @@ io.on("connection",function(socket){
     lookup[socket.id]=socket
     isActiveLookup[socket.id]=true
     lookup[socket.id].emit("serverPrivate","connected to server on socket: "+socket.id)
-    console.log("client connected on socket: ",socket.id)
+    console.log("client connected on socket: ",socket.id +" Current active sockets: "+getTotalActiveSockets())
     io.sockets.emit("serverPublic","new connection on socket: "+socket.id+". Current active sockets: "+getTotalActiveSockets())
 
     //listen for data
@@ -39,7 +39,7 @@ io.on("connection",function(socket){
     });
 
     socket.on('disconnect', function(){
-        console.info('user disconnected from socket: ' + socket.id);
+        console.info('user disconnected from socket: ' + socket.id+" Current active sockets: "+getTotalActiveSockets());
         isActiveLookup[socket.id]=false
         io.sockets.emit("serverPublic","user disconnected on socket: "+socket.id+". Current active sockets: "+getTotalActiveSockets())
     });

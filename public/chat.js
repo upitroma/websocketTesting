@@ -1,5 +1,5 @@
 //Make connection
-var socket = io.connect("http://10.228.209.25:4000");//change to server's location
+var socket = io.connect("http://10.228.208.47:4000/");//change to server's location
 
 //query dom
 
@@ -8,6 +8,7 @@ var message = document.getElementById('message'),
     btn = document.getElementById('send'),
     output = document.getElementById('output'),
     feedback = document.getElementById('feedback'),
+    file=document.getElementById("fileUpload"),
     serverInfo = document.getElementById("serverinfo");
 
 //emmit events
