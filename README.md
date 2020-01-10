@@ -2,5 +2,6 @@
 I'm trying to learn about websockets
 
 # how to start server 
-extract node.js
+extract the zip
+
 $node index.js
