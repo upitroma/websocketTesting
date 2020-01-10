@@ -1,4 +1,6 @@
 # websocketTesting
 I'm trying to learn about websockets
 
-start server $node index.js
+# how to start server 
+extract node.js
+$node index.js
